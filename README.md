@@ -1,3 +1,3 @@
 # wl-projeto
 
-Repositório criado
+Repositório criado, mais informações serão adicionadas em breve...
