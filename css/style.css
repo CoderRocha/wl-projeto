@@ -83,7 +83,8 @@ button {
 
 .systemlab-menu footer {
     color: #000000;
-    display: flex;
+    display: center;
+    text-align: center;
     padding: 10px;
     bottom: 0;
     width: 100%;
