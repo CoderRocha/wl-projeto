@@ -1,12 +1,34 @@
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    overflow: auto;
+}
+
+/* Header */
+header {
+    text-align: center;
+    padding: 10px 20px;
+    color: #fff;
+    z-index: 1000;
+}
+
+footer {
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
 }
 
 .login-container {
@@ -17,6 +39,9 @@ body {
     max-width: 400px;
     width: 100%;
     text-align: center;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10vh;
 }
 
 .login-container img {
@@ -24,31 +49,42 @@ body {
     margin-bottom: 20px;
 }
 
-input {
+form {
+    margin-top: 20px;
+}
+
+label,
+input,
+select,
+button {
+    display: block;
+    margin-top: 10px;
+}
+
+input,
+select,
+button {
     width: 100%;
     padding: 10px;
-    margin: 8px 0;
     box-sizing: border-box;
 }
 
 button {
     background-color: #2800b8;
     color: #fff;
-    padding: 10px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
-.systemlab-menu body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.systemlab-menu header {
-    text-align: center;
-    padding: 10px;
+.systemlab-menu {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
 }
 
 .systemlab-menu nav {
@@ -57,18 +93,58 @@ button {
     padding: 10px;
 }
 
-.systemlab-menu nav ul {
+nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.systemlab-menu nav ul li {
+#cadastrar-pacientes {
+    background-image: url('../img/cadpac.webp');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#cadastrar-exames {
+    background-image: url('../img/cadexam.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#gerar-relatorio {
+    background-image: url('../img/reports.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+#cadastrar-pacientes a,
+#cadastrar-exames a,
+#gerar-relatorio a {
+    text-decoration: none;
+    color: black;
+}
+
+nav ul li {
     display: inline;
     margin-right: 10px;
 }
 
-.systemlab-menu nav a {
+nav a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
@@ -81,11 +157,20 @@ button {
     border-radius: 8px;
 }
 
-.systemlab-menu footer {
-    color: #000000;
-    display: center;
-    text-align: center;
-    padding: 10px;
-    bottom: 0;
+.systemlab-menu table {
     width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th,
+table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #130058;
+    color: #fff;
 }

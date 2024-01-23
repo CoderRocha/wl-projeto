@@ -5,16 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/icon.png" type="image/icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Início</title>
+    <title>Gerar Relatório</title>
 </head>
 <body>
 
-    <div class="systemlab-menu">
-
-        <header>
+<div class="systemlab-menu">
+    <header>
+        <a href="home.html">
             <img src="../img/logo.png" alt="Logo SystemLab">
-        </header>
-
+        </a>
         <nav>
             <ul>
                 <li><a href="cadpac.html">Cadastrar Pacientes</a></li>
@@ -22,16 +21,36 @@
                 <li><a href="reports.html">Gerar Relatório</a></li>
             </ul>
         </nav>
+    </header>
 
-        <section>
-        
-        </section>
+    <section id="gerar-relatorio">
+        <h2>Gerar Relatório de Pacientes</h2>
+        <button onclick="gerarRelatorio()">Gerar Relatório</button>
+    </section>
 
-        <footer>
-            <p>&copy; 2024 SystemLab</p>
-        </footer>
+    <section id="relatorio-pacientes">
+        <h2>Relatório de Pacientes</h2>
+        <table id="tabela-relatorio">
+            <thead>
+                <tr>
+                    <th>Número de Atendimento do Paciente</th>
+                    <th>Nome do Paciente</th>
+                    <th>Sigla dos Exames</th>
+                    <th>Valor Total dos Exames</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Conteúdo da tabela... -->
+            </tbody>
+        </table>
+    </section>
 
-    </div>
+    <footer>
+        <p>© 2024 SystemLab</p>
+    </footer>
+
+    <script src="../js/public.js"></script>
+</div>
 
 </body>
 </html>

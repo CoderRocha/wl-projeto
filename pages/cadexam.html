@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../img/icon.png" type="image/icon">
     <link rel="stylesheet" href="../css/style.css">
-    <title>Início</title>
+    <title>Cadastro de Exames</title>
 </head>
+
 <body>
 
     <div class="systemlab-menu">
-
         <header>
-            <img src="../img/logo.png" alt="Logo SystemLab">
+            <a href="home.html">
+                <img src="../img/logo.png" alt="Logo SystemLab">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="cadpac.html">Cadastrar Pacientes</a></li>
+                    <li><a href="cadexam.html">Cadastrar Exames</a></li>
+                    <li><a href="reports.html">Gerar Relatório</a></li>
+                </ul>
+            </nav>
         </header>
 
-        <nav>
-            <ul>
-                <li><a href="cadpac.html">Cadastrar Pacientes</a></li>
-                <li><a href="cadexam.html">Cadastrar Exames</a></li>
-                <li><a href="reports.html">Gerar Relatório</a></li>
-            </ul>
-        </nav>
+        <section id="cadastrar-exames">
+            <h2>Cadastrar Exame</h2>
+            <div class="form-container">
+                <form id="cadexam-form"> <label for="codigo-exame">Código do Exame:</label> <input type="text"
+                        id="codigo-exame" required> <label for="nome-exame">Nome do Exame:</label> <input type="text"
+                        id="nome-exame" required> <label for="valor-exame">Valor:</label> <input type="text"
+                        id="valor-exame" required> <button type="button" onclick="salvarExame()">Salvar Exame</button>
+                </form>
+            </div>
+        </section>
 
-        <section>
-        
+        <section id="exames-cadastrados">
+            <h2>Exames Cadastrados</h2>
+            <table id="tabela-exames">
+                <thead>
+                    <tr>
+                        <th>Número</th>
+                        <th>Código do Exame</th>
+                        <th>Nome do Exame</th>
+                        <th>Valor</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </section>
 
         <footer>
-            <p>&copy; 2024 SystemLab</p>
+            <p>© 2024 SystemLab</p>
         </footer>
 
+        <script src="../js/public.js"></script>
     </div>
 
 </body>
+
 </html>
