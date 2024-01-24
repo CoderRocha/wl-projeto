@@ -1,7 +1,6 @@
-// server.mjs (tanto o lado do cliente quanto do servidor)
-
-// Função para gerar número de atendimento (lado do cliente)
+//gerar número de atendimento aleatório
 function gerarNumeroAtendimento() {
+    //requisição para o servidor
     fetch('/gerarNumeroAtendimento')
         .then(response => response.json())
         .then(data => {
@@ -10,28 +9,27 @@ function gerarNumeroAtendimento() {
         .catch(error => console.error('Erro:', error));
 }
 
-//função para adicionar exame à lista (lado do cliente)
-if (typeof window !== 'undefined') {
+//adicionar exame à lista
+function adicionarExame() {
+    const novoExame = document.getElementById('novo-exame').value;
+    const examesList = document.getElementById('exames-list');
     
-    function adicionarExame() {
-
+    //verificar se o exame já está na lista
+    if (!Array.from(examesList.children).some(li => li.textContent === novoExame)) {
+        const li = document.createElement('li');
+        li.textContent = novoExame;
+        examesList.appendChild(li);
     }
-
-    function salvarAtendimento() {
-
-    }
-
-    document.addEventListener('DOMContentLoaded', gerarNumeroAtendimento);
 }
 
-//salvar o atendimento (lado do cliente)
+//salvar o atendimento
 function salvarAtendimento() {
     const numeroAtendimento = document.getElementById('numero-atendimento').value;
     const nomeCompleto = document.getElementById('nome-completo').value;
     const sexo = document.getElementById('sexo').value;
     const email = document.getElementById('email').value;
     const celular = document.getElementById('celular').value;
-
+    
     //obter a lista de exames
     const examesList = document.getElementById('exames-list');
     const exames = Array.from(examesList.children).map(li => li.textContent);
@@ -51,43 +49,37 @@ function salvarAtendimento() {
             exames,
         }),
     })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Atendimento salvo com sucesso! ID do Paciente:', data.pacienteId);
-            //fedirecionar para a página de listagem de atendimentos ou realizar outra ação necessária
-        })
-        .catch(error => console.error('Erro:', error));
+    .then(response => response.json())
+    .then(data => {
+        console.log('Atendimento salvo com sucesso! ID do Paciente:', data.pacienteId);
+        //redirecionar para a página de listagem de atendimentos ou realizar outra ação
+    })
+    .catch(error => console.error('Erro:', error));
 }
 
-//função de gerarNumeroAtendimento ao carregar a página
-document.addEventListener('DOMContentLoaded', gerarNumeroAtendimento);
-
-//lado do servidor
-import express from 'express';
-import fetch from 'node-fetch';
-
-const app = express();
-const port = 3000;
-
-//config do express e outras dependências
-app.use(express.json());
-
-//rotas
-app.get('/gerarNumeroAtendimento', (req, res) => {
-    //gerar número de atendimento
-    const numeroAtendimento = Math.floor(Math.random() * 1000) + 1;
-    res.json({ numeroAtendimento });
-});
+//gerar número de atendimento ao carregar a página
+gerarNumeroAtendimento();
 
 app.post('/salvarAtendimento', (req, res) => {
     const { numeroAtendimento, nomeCompleto, sexo, email, celular, exames } = req.body;
 
-    // salvar atendimento no banco de dados
-    const pacienteId = 123;
+    //inserir dados do paciente na tabela 'pacientes'
+    db.run(
+        'INSERT INTO pacientes (numero_atendimento, nome_completo, sexo, email, celular) VALUES (?, ?, ?, ?, ?)',
+        [numeroAtendimento, nomeCompleto, sexo, email, celular],
+        function (err) {
+            if (err) {
+                return res.status(500).json({ error: err.message });
+            }
 
-    res.json({ success: true, pacienteId });
-});
+            const pacienteId = this.lastID;
 
-app.listen(port, () => {
-    console.log(`Server listening at http://localhost:${port}`);
+            //inserir exames na tabela 'exames'
+            const stmt = db.prepare('INSERT INTO exames (paciente_id, nome) VALUES (?, ?)');
+            exames.forEach(exame => stmt.run([pacienteId, exame]));
+            stmt.finalize();
+
+            res.json({ success: true, pacienteId });
+        }
+    );
 });
