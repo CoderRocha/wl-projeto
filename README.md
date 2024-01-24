@@ -51,6 +51,6 @@ O sistema evita o cadastro de exames com códigos ou nomes duplicados.
 
 ## Como Executar o Projeto
 
-Enquanto o Node.js não for implementado 100% no projeto, pode executar normalmente pelo "index.html", que abre diretamente no navegador.
+Enquanto o Node.js não for implementado 100% no projeto, pode executar normalmente pelo "index.html", que abre diretamente no navegador, ou por esse link: [https://coderrocha.github.io/wl-projeto/index.html](https://coderrocha.github.io/wl-projeto/index.html)
 
 Porém, quando for implementado o Node.js, vai ser preciso utilizar o seguinte link para rodar o servidor local dele: [http://localhost:3000](http://localhost:3000)
