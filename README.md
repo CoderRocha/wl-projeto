@@ -1,6 +1,6 @@
 # wl-projeto
 
-Projeto de Sistema para Laboratórios (SystemLab)
+## Projeto de Sistema para Laboratórios (SystemLab)
 
 Criei esse projeto de sistema de laboratório, batizado por mim de SystemLab, que permite gerenciar cadastros de atendimentos de pacientes, exames e relatórios simples contendo informações dos pacientes e os exames cadastrados neles. Fiz esse projeto para entregar em um desafio. E nele, é utilizado:
 
@@ -36,7 +36,7 @@ O sistema evita o cadastro de exames com códigos ou nomes duplicados.
 
 ### Relatório Básico de Pacientes e Exames
 
-É possível gerar relatórios contendo informações detalhadas sobre pacientes e os exames cadastrados nesses pacientes.
+É possível gerar relatórios contendo informações básicas sobre pacientes e os exames cadastrados nesses pacientes.
 
 ## Tecnologias Atualmente Utilizadas
 
@@ -53,4 +53,4 @@ O sistema evita o cadastro de exames com códigos ou nomes duplicados.
 
 Enquanto o Node.js não for implementado 100% no projeto, pode executar normalmente pelo "index.html", que abre diretamente no navegador.
 
-Porém, quando for implementado o Node.js 100%, vai ser preciso utilizar o seguinte link para rodar o servidor local dele: [http://localhost:3000](http://localhost:3000)
+Porém, quando for implementado o Node.js, vai ser preciso utilizar o seguinte link para rodar o servidor local dele: [http://localhost:3000](http://localhost:3000)
