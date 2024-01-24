@@ -55,6 +55,6 @@ SQLite: Banco de dados
 
 Como Executar o Projeto
 
-É preciso ter ter o Node.js instalado para ele poder rodar. Porém, pode abrir o arquivo index e utilizar sem o node.js se quiser.
+Enquanto o Node.js não for implementado 100% no projeto, pode executar normalmente pelo "index.html", que abre diretamente no navegador.
 
-Mas se for utilizar com server local no node, utilize o seguinte link: http://localhost:3000
+Porém, quando for implementado o node.js 100%, vai ser preciso utilizar o seguinte link para rodar p servidor local dele: http://localhost:3000
