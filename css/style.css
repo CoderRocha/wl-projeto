@@ -76,6 +76,10 @@ button {
     cursor: pointer;
 }
 
+.salvar-btn {
+    background-color: green;
+}
+
 .systemlab-menu {
     max-width: 800px;
     margin: 0 auto;
@@ -90,12 +94,16 @@ button {
     background-color: #130058;
     color: #fff;
     padding: 10px;
+    justify-content: space-between;
 }
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
 }
 
 #cadastrar-pacientes {
@@ -167,7 +175,7 @@ nav a {
     padding: 20px;
     margin: 20px 0;
     background-color: #f4f4f4;
-    border-radius: 8px;
+    border-radius: 10px;
 }
 
 .systemlab-menu table {
