@@ -154,7 +154,7 @@ nav ul {
 #cadastrar-exames a,
 #gerar-relatorio a {
     text-decoration: none;
-    color: white;
+    color: rgb(10, 159, 209);
     text-shadow:
         -1px -1px 0 black,
          1px -1px 0 black,
